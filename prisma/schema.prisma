@@ -15,4 +15,11 @@ model User {
   provider  String   @default("local")
   googleId  String?  @unique
   createdAt DateTime @default(now())
+  role      Role     @default(CUSTOMER)
+  refreshToken String?
+}
+
+enum Role {
+  CUSTOMER
+  ADMIN
 }
